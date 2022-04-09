@@ -18,6 +18,10 @@ repos:
       meta-poky:
   layers/meta-openamp:
     url: https://github.com/wmamills/meta-openamp.git
+    # Bill's work only
+    # refspec: d77ce93cd09eed4d4db0743bcc361fa11a43362c
+    # Mark's merge
+    refspec: df7314fbb1db7ee240d7387a10afce035012c95b
     layers:
       .:
 
