@@ -30,6 +30,9 @@ repos:
     layers:
       meta-arm:
       meta-arm-toolchain:
+  self:
+    layers:
+      layers/meta-openamp-bsp:
 
 env:
   BB_LOGCONFIG: ""
