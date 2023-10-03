@@ -1,0 +1,57 @@
+# Initial workflow for testing github actions with OE Builds
+
+name: build
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on:
+        labels: ubuntu-22.04-x86-vcpu16
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      - name: Setup Build Host
+        run: ./scripts/build-host-setup.sh
+
+      - name: check PATH
+        run: echo "$PATH"
+
+      - name: Use Kas to build
+        run: "kas build ci/generic-arm64.yml"
+
+      - name: show file stats
+        run:  |
+              du -sh build/sstate-cache/      || true
+              du -sh build/downloads/         || true
+              du -sh build/tmp/deploy/images/ || true
+              du -sh build/tmp/deploy/ipk     || true
+              cat build/tmp/buildstats/20*/build_stats || true
+
+      - name: After stats
+        run:  echo After stats
+
+      - name: Archive Images
+        uses: actions/upload-artifact@v3
+        with:
+          name: images
+          path: |
+            build/tmp/deploy/images
+
+      - name: Archive Packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: |
+            build/tmp/deploy/ipk
