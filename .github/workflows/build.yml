@@ -29,7 +29,7 @@ jobs:
         run: echo "$PATH"
 
       - name: Use Kas to build
-        run: "kas build ci/generic-arm64.yml"
+        run: "kas build ci/generic-arm64.yml:mixins/quick-target-test.yml"
 
       - name: show file stats
         run:  |
