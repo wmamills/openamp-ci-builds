@@ -29,7 +29,7 @@ jobs:
         run: echo "$PATH"
 
       - name: Use Kas to build
-        run: "kas build ci/generic-arm64.yml:mixins/quick-target-test.yml"
+        run: "kas build ci/generic-arm64.yml"
 
       - name: show file stats
         run:  |
@@ -40,6 +40,13 @@ jobs:
 
       - name: After stats
         run:  echo After stats
+
+      - name: Archive Images
+        uses: actions/upload-artifact@v3
+        with:
+          name: images
+          path: |
+            build/tmp/deploy/images
 
       - name: Archive Packages
         uses: actions/upload-artifact@v3
