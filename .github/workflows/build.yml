@@ -37,3 +37,13 @@ jobs:
               du -sh build/downloads/         || true
               du -sh build/tmp/deploy/images/ || true
               du -sh build/tmp/deploy/ipk     || true
+
+      - name: After stats
+        run:  echo After stats
+
+      - name: Archive Packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: |
+            build/tmp/deploy/ipk
