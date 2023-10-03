@@ -30,3 +30,10 @@ jobs:
 
       - name: Use Kas to build
         run: "kas build ci/generic-arm64.yml:mixins/quick-test.yml"
+
+      - name: show file stats
+        run:  |
+              du -sh build/sstate-cache/      || true
+              du -sh build/downloads/         || true
+              du -sh build/tmp/deploy/images/ || true
+              du -sh build/tmp/deploy/ipk     || true
