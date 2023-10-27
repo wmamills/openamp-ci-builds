@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RELEASE=xlnx-rel-v2023.1
+RELEASE=xlnx-rel-v2023.2
 
 set -e
 if [ x"$1" == x"-d" ]; then set -x; shift; fi
