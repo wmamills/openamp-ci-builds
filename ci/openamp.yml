@@ -51,10 +51,10 @@ local_conf_header:
     PACKAGE_INSTALL_EXTRAS = "rsync iproute2 dropbear kernel-modules"
     IMAGE_INSTALL:append = " ${PACKAGE_INSTALL_EXTRAS} "
     PREFERRED_PROVIDER_virtual/kernel = "linux-openamp"
-    PREFERRED_PROVIDER_libmetal = "libmetal-dev"
-    PREFERRED_PROVIDER_open-amp = "open-amp-dev"
-    OPENAMP_SYS_REF_SRCREV = "${AUTOREV}"
-    OPENAMP_SYS_REF_BRANCH = "v2023.10"
+    #PREFERRED_PROVIDER_libmetal = "libmetal-dev"
+    #PREFERRED_PROVIDER_open-amp = "open-amp-dev"
+    #OPENAMP_SYS_REF_SRCREV = "${AUTOREV}"
+    #OPENAMP_SYS_REF_BRANCH = "v2023.10"
 
   openamp: |
     DISTRO_FEATURES:append = " openamp"
