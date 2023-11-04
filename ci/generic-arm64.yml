@@ -15,4 +15,4 @@ local_conf_header:
 
 target:
   - openamp-initramfs-minimal
-  - openamp-image-minimal
+  #- openamp-image-minimal
