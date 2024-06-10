@@ -4,16 +4,16 @@ inherit kernel
 require recipes-kernel/linux/linux-yocto.inc
 
 SRC_REPO = "github.com/wmamills/linux-openamp-staging.git"
-SRC_BRANCH = "openamp-staging-6.5.y-rebase"
+SRC_BRANCH = "openamp-staging-6.9.y-rebase"
 SRC_URI = "git://${SRC_REPO};protocol=https;nocheckout=1;name=machine;nobranch=1;branch=${SRC_BRANCH}"
 
 SRC_URI:append = " file://openamp-bsp-kmeta;type=kmeta;name=openamp-bsp-kmeta;destsuffix=openamp-bsp-kmeta"
 
-LINUX_VERSION ?= "6.5.8"
+LINUX_VERSION ?= "6.9.3"
 LINUX_VERSION_EXTENSION:append = "-openamp"
 
 # Modify SRCREV to a different commit hash in a copy of this recipe to
-SRCREV="24f1889b6bdce0633436cf37f4ad703955ad229a"
+SRCREV="1b4861e32e461b6fae14dc49ed0f1c7f20af5146"
 
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
