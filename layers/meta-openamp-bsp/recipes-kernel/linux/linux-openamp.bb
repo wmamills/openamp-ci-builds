@@ -13,7 +13,7 @@ LINUX_VERSION ?= "6.9.3"
 LINUX_VERSION_EXTENSION:append = "-openamp"
 
 # Modify SRCREV to a different commit hash in a copy of this recipe to
-SRCREV="1b4861e32e461b6fae14dc49ed0f1c7f20af5146"
+SRCREV="8d63a7e2339767b51d88326b1fff88fb5c37034f"
 
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
