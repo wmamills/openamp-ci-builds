@@ -5,7 +5,7 @@ define KFEATURE_DESCRIPTION "Extra config for generic{,-}arm64"
 define KFEATURE_COMPATIBILITY arch
 
 # if we start from defconfig we need this one
-kconf non-hardware zynqmp-still-needed-def.config
+kconf non-hardware zynqmp-still-needed-def.cfg
 
 # if we start from linux-yocto genericarm64 config, we need this one
-kconf non-hardware zynqmp-still-needed-yp.config
+kconf non-hardware zynqmp-still-needed-yp.cfg

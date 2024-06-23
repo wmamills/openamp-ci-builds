@@ -2,4 +2,4 @@ define KFEATURE_DESCRIPTION "Extra config for generic-armv7a"
 define KFEATURE_COMPATIBILITY arch
 
 # extra configs for ST MP1 based platforms
-kconf non-hardware multi_v7_stmp1_extras.config
+kconf non-hardware multi_v7_stmp1_extras.cfg
